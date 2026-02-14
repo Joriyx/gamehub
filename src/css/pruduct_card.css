@@ -1,5 +1,6 @@
 .product_card {
   background-color: var(--color-primary);
+  color: var(--color-tertiary);
   border-radius: 20px;
   width: 300px;
   height: 400px;
@@ -14,7 +15,7 @@
 
 .product_card_cta {
   color: var(--color-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-tertiary);
   padding: 10px 10px;
   border-radius: 15px;
   font-weight: bold;

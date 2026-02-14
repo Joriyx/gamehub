@@ -1,4 +1,4 @@
-.home-mobile {
+.home-landing {
   background-image: url("../../assets/images/Background_mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -11,28 +11,24 @@
   height: calc(100dvh - 220px);
 }
 
-.home-mobile h1 {
+.home-landing h1 {
   font-family: "fugaz one";
   max-width: 220px;
   color: var(--color-primary);
   align-self: center;
 }
 
-.home-mobile a {
-  color: var(--color-primary);
-  background-color: var(--color-secondary);
+.home-landing a {
+  color: var(--color-tertiary);
+  background-color: var(--color-primary);
   padding: 15px 50px;
   border-radius: 15px;
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.home-desktop-1 {
-  display: none;
-}
-
 .home-desktop-2 h2 {
-  color: var(--color-primary);
+  color: var(--color-tertiary);
   font-weight: 600;
   margin: 60px;
   font-size: 2.5em;
@@ -47,12 +43,12 @@
     display: none;
   }
 
-  .home-desktop-1,
+  .home-landing,
   .home-desktop-2 {
     display: block;
   }
 
-  .home-desktop-1 {
+  .home-landing {
     background-image: url("../../assets/images/Background_desktop.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,37 +58,14 @@
     text-align: center;
     justify-content: center;
     gap: 10px;
-    align-items: flex-start;
     padding: 80px;
   }
 
-  .home-desktop-1 h1,
-  .home-desktop-1 p {
-    color: var(--color-primary);
-    text-align: start;
-  }
-
-  .home-desktop-1 h1 {
+  .home-landing h1 {
     font-size: 3em;
     font-family: "fugaz one";
     letter-spacing: 2px;
     max-width: 360px;
-  }
-
-  .home-desktop-1 p {
-    font-size: 1em;
-    font-weight: 300;
-    max-width: 340px;
-    flex-grow: 1;
-  }
-
-  .home-desktop-1 a {
     color: var(--color-primary);
-    background-color: var(--color-secondary);
-    padding: 20px 60px;
-    border-radius: 15px;
-    font-weight: bold;
-    font-size: 1.5em;
-    align-self: flex-end;
   }
 }

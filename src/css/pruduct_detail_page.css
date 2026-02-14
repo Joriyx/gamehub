@@ -1,0 +1,131 @@
+main h1 {
+  color: var(--color-primary);
+  font-size: 2em;
+  font-style: bold;
+}
+
+main p {
+  color: var(--color-primary);
+  max-width: 420px;
+}
+
+fieldset {
+  color: var(--color-primary);
+  max-width: 420px;
+  border: none;
+  padding: 0;
+}
+
+main h2 {
+  color: var(--color-primary);
+  max-width: 420px;
+}
+
+.cta_add_cart {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border-radius: 40px;
+  padding: 15px 40px;
+  font-size: 2em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 75px 0;
+  justify-content: center;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.product_images-inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product_images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.big {
+  max-width: 330px;
+  max-height: 330px;
+}
+
+.small {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.size {
+  font-weight: bold;
+}
+
+.product_detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.size_selector span {
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+}
+
+.size_selector input {
+  display: none;
+}
+
+.size_selector input:checked + span {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.product_description {
+  margin: 10px 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  main a {
+    align-self: self-start;
+  }
+
+  .product_images-inline {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product_images {
+    flex-direction: row-reverse;
+  }
+
+  .product {
+    flex-direction: row-reverse;
+  }
+
+  .product_detail {
+    align-items: start;
+  }
+
+  .product_description {
+    margin: 10px 0px;
+    text-align: start;
+  }
+}

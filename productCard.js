@@ -1,0 +1,1 @@
+function createProductCard(product) {}

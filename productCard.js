@@ -1,4 +1,4 @@
-function createProductCard(product) {
+export function createProductCard(product) {
   const article = document.createElement("article");
   article.className = "product_card";
 
@@ -37,4 +37,6 @@ function createProductCard(product) {
   button.className = "product_card_cta";
   button.textContent = "Shop Now";
   article.appendChild(button);
+
+  return article;
 }

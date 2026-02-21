@@ -1,4 +1,5 @@
 import { getProduct } from "../api.js";
+import { addToCart } from "../cart.js";
 
 function createProductInfo(product) {
   const article = document.getElementById("product");
@@ -39,6 +40,9 @@ function createProductInfo(product) {
 
   const button = document.createElement("button");
   button.textContent = "Add to cart";
+  button.onclick = () => {
+    addToCart(product);
+  };
   productDetail.appendChild(button);
 
   const productImage = document.createElement("section");

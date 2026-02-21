@@ -14,7 +14,7 @@ async function refreshCartList() {
   }
 
   for (let i = 0; i < products.length; i++) {
-    popularList.appendChild(createCartEntry(products[i]));
+    cartList.appendChild(createCartEntry(products[i]));
   }
 }
 

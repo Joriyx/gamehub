@@ -1,3 +1,5 @@
+import { removeFromCart } from "./cart.js";
+
 export function createCartEntry(product) {
   const article = document.createElement("article");
   article.className = "cart_entry";
@@ -12,7 +14,7 @@ export function createCartEntry(product) {
   imgDiv.appendChild(img);
 
   const productInfoDiv = document.createElement("div");
-  imgDiv.className = "product_info";
+  productInfoDiv.className = "product_info";
   article.appendChild(productInfoDiv);
 
   const h2 = document.createElement("h2");
@@ -25,6 +27,10 @@ export function createCartEntry(product) {
 
   const button = document.createElement("button");
   button.textContent = "Remove";
+  button.onclick = () => {
+    removeFromCart(product.id);
+    article.remove();
+  };
   productInfoDiv.appendChild(button);
 
   return article;

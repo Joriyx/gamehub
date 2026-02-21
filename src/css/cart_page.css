@@ -30,6 +30,7 @@ h2 {
   display: flex;
   flex-direction: row;
   gap: 20px;
+  min-width: 300px;
 }
 
 .product_info > p {
@@ -39,9 +40,13 @@ h2 {
   font-size: 1.5em;
 }
 
+.product_info h2 {
+  max-width: 150px;
+}
+
 .shoping_cart_image img {
-  height: 100px;
-  width: 100px;
+  height: 100%;
+  width: 100%;
 }
 
 .shoping_cart_image {
@@ -91,8 +96,9 @@ main {
     grid-area: 3/2/4/3;
   }
 
-  .shoping_cart_image img {
-    height: 150px;
-    width: 150px;
+  .cart_list {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }

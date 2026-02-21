@@ -10,4 +10,11 @@ export async function getProducts() {
   } catch (error) {}
 }
 
-export async function getProduct(id) {}
+export async function getProduct(id) {
+  try {
+    const response = await fetch(ENDPOINT + "/" + id);
+    if (response.ok) {
+      return (await response.json()).data;
+    }
+  } catch (error) {}
+}

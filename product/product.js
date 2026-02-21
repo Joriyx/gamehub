@@ -1,4 +1,6 @@
-function refreshProductInfo(product) {
+import { getProduct } from "../api.js";
+
+function createProductInfo(product) {
   const article = document.getElementById("product");
   if (!article) {
     return;
@@ -25,7 +27,7 @@ function refreshProductInfo(product) {
   for (let i = 0; i < product.tags.length; i++) {
     const tag = product.tags[i];
     const span = document.createElement("span");
-    span.textContent = "#" + tag;
+    span.textContent = "#" + tag + " ";
     tagContainer.appendChild(span);
   }
   productDetail.appendChild(tagContainer);
@@ -49,3 +51,30 @@ function refreshProductInfo(product) {
   img.alt = product.image.alt;
   productImage.appendChild(img);
 }
+
+async function refreshProductInfo() {
+  const article = document.getElementById("product");
+  if (!article) {
+    return;
+  }
+  article.innerHTML = "";
+  const query = new URLSearchParams(window.location.search);
+  const id = query.get("id");
+  if (!id) {
+    const msg = document.createElement("h1");
+    msg.textContent = "Product not found";
+    article.appendChild(msg);
+    return;
+  }
+  const product = await getProduct(id);
+  if (!product) {
+    const msg = document.createElement("h1");
+    msg.textContent = "Product not found";
+    article.appendChild(msg);
+    return;
+  }
+
+  createProductInfo(product);
+}
+
+document.onreadystatechange = refreshProductInfo;

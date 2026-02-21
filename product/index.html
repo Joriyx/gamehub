@@ -23,43 +23,24 @@
       </nav>
     </header>
     <main>
-      <div class="product">
-        <section class="product_detail">
+      <article class="product" id="product">
+        <section class="product_detail" id="product_detail">
           <h1 id="name">Stormheim</h1>
+          <h2 id="genre">f</h2>
           <p class="product_description" id="description">
             Whether you're scaling the peaks of Highmountain, navigating the
             jungles of Stranglethorn, or simply gathering with comrades at the
             Frostwall Tavern, the Stormheim jacket is your armor against the
             wilds of Azeroth
           </p>
-
-          <!--update html to fit game-->
-
-          <h2 class="size">Size</h2>
-          <fieldset>
-            <label class="size_selector"
-              ><input type="radio" name="size" /> <span>XS</span></label
-            >
-            <label class="size_selector"
-              ><input type="radio" name="size" checked /> <span>S</span></label
-            >
-            <label class="size_selector"
-              ><input type="radio" name="size" /> <span>M</span></label
-            >
-            <label class="size_selector"
-              ><input type="radio" name="size" /> <span>L</span></label
-            >
-            <label class="size_selector"
-              ><input type="radio" name="size" /> <span>XL</span></label
-            >
-            <label class="size_selector"
-              ><input type="radio" name="size" /> <span>XXL</span></label
-            >
-          </fieldset>
+          <div id="tag_container">
+            <span>#hell</span>
+            <span>#heaven</span>
+          </div>
           <p class="price" id="price">$99</p>
           <a href="../checkout/index.html" class="cta_add_cart">Add to cart</a>
         </section>
-        <section class="product_images">
+        <section class="product_images" id="product_images">
           <img
             id="image"
             src="assets/product-images/RainyDays_Jacket4.webp"
@@ -67,7 +48,7 @@
             class="big"
           />
         </section>
-      </div>
+      </article>
     </main>
     <footer>
       <div>

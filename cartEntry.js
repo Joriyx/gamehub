@@ -1,4 +1,4 @@
-function createCartEntry(product) {
+export function createCartEntry(product) {
   const article = document.createElement("article");
   article.className = "cart_entry";
 

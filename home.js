@@ -13,7 +13,9 @@ async function refreshPopularList() {
     return;
   }
 
-  for (let i = 0; i < products.length; i++) {
+  const productPopularCount = Math.min(3, products.length);
+
+  for (let i = 0; i < productPopularCount; i++) {
     popularList.appendChild(createProductCard(products[i]));
   }
 }

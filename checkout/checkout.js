@@ -1,7 +1,8 @@
-import { getCart, refreshCartCounter } from "../cart.js";
+import { getCart, refreshCartCounter, refreshCartTotal } from "../cart.js";
 import { createCartEntry } from "../cartEntry.js";
 
 refreshCartCounter();
+refreshCartTotal();
 
 async function refreshCartList() {
   const cartList = document.getElementById("cart_list");

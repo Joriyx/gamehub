@@ -9,6 +9,7 @@ export function addToCart(product) {
   cart.push(product);
   sessionStorage.setItem("cart", JSON.stringify(cart));
   refreshCartCounter();
+  refreshCartTotal();
 }
 
 export function removeFromCart(id) {
@@ -17,11 +18,13 @@ export function removeFromCart(id) {
   });
   sessionStorage.setItem("cart", JSON.stringify(cart));
   refreshCartCounter();
+  refreshCartTotal();
 }
 
 export function clearCart() {
   sessionStorage.removeItem("cart");
   refreshCartCounter();
+  refreshCartTotal();
 }
 
 export function getCart() {
@@ -49,4 +52,18 @@ export function refreshCartCounter() {
     return;
   }
   cartCount.textContent = getCart().length;
+}
+
+export function refreshCartTotal() {
+  let total = 0;
+  const products = getCart();
+  for (let i = 0; i < products.length; i++) {
+    total += products[i].price;
+  }
+
+  const totalPrice = document.getElementById("total_price");
+  if (!totalPrice) {
+    return;
+  }
+  totalPrice.textContent = "$" + total;
 }

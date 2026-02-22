@@ -75,6 +75,10 @@ main {
   font-size: 40px;
 }
 
+.image_and_sqp_line {
+  color: var(--color-tertiary);
+}
+
 @media screen and (min-width: 800px) {
   .shopping_cart {
     flex-direction: row;

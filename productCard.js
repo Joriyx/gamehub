@@ -32,7 +32,7 @@ export function createProductCard(product, basePath = "/") {
   article.appendChild(h3);
 
   const price = document.createElement("p");
-  price.textContent = product.price;
+  price.textContent = "$" + product.price;
   price.className = "product_card_price";
   article.appendChild(price);
 

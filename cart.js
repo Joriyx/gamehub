@@ -65,5 +65,5 @@ export function refreshCartTotal() {
   if (!totalPrice) {
     return;
   }
-  totalPrice.textContent = "$" + total;
+  totalPrice.textContent = "$" + total.toFixed(2);
 }

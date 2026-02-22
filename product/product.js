@@ -36,7 +36,7 @@ function createProductInfo(product) {
   productDetail.appendChild(tagContainer);
 
   const price = document.createElement("p");
-  price.textContent = product.price;
+  price.textContent = "$" + product.price;
   price.className = "price";
   productDetail.appendChild(price);
 

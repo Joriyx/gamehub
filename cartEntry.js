@@ -1,4 +1,4 @@
-import { removeFromCart } from "./cart.js";
+import { removeFromCart, itemsInCartCount } from "./cart.js";
 
 export function createCartEntry(product) {
   const article = document.createElement("article");
@@ -22,13 +22,16 @@ export function createCartEntry(product) {
   productInfoDiv.appendChild(h2);
 
   const p = document.createElement("p");
-  p.textContent = product.price;
+  p.textContent = "$" + product.price;
   productInfoDiv.appendChild(p);
 
   const button = document.createElement("button");
   button.textContent = "Remove";
   button.onclick = () => {
     removeFromCart(product.id);
+    if (itemsInCartCount() == 0) {
+      article.replaceWith("No products in cart");
+    }
     article.remove();
   };
   productInfoDiv.appendChild(button);

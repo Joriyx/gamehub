@@ -48,8 +48,7 @@ function createProductInfo(product) {
     button.textContent = "Add to cart";
     button.onclick = () => {
       addToCart(product);
-      button.textContent = "Added to cart";
-      button.disabled = true;
+      window.location.href = "../shop/index.html";
     };
   }
 

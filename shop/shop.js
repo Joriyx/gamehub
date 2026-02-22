@@ -26,7 +26,7 @@ async function refreshPopularList() {
       genreFilter === "All" ||
       genreFilter === products[i].genre
     ) {
-      popularList.appendChild(createProductCard(products[i]));
+      popularList.appendChild(createProductCard(products[i], "../"));
     }
   }
   genreList.innerHTML = "";

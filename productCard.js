@@ -1,4 +1,4 @@
-export function createProductCard(product) {
+export function createProductCard(product, basePath = "/") {
   const article = document.createElement("article");
   article.className = "product_card";
 
@@ -8,16 +8,16 @@ export function createProductCard(product) {
   article.appendChild(favoriteIcon);
 
   const icon = document.createElement("img");
-  icon.src = "/assets/icons/Heart.svg";
+  icon.src = basePath + "assets/icons/Heart.svg";
   if (product.favorite) {
-    icon.src = "/assets/icons/Filled_Heart.svg";
+    icon.src = basePath + "assets/icons/Filled_Heart.svg";
   }
   icon.alt = "line art of a heart";
   icon.className = "icons";
   favoriteIcon.appendChild(icon);
 
   const productLink = document.createElement("a");
-  productLink.href = "/product/index.html?id=" + product.id;
+  productLink.href = basePath + "product/index.html?id=" + product.id;
   productLink.className = "product_card_photo";
   article.appendChild(productLink);
 
@@ -37,7 +37,7 @@ export function createProductCard(product) {
   article.appendChild(price);
 
   const button = document.createElement("a");
-  button.href = "/product/index.html?id=" + product.id;
+  button.href = basePath + "product/index.html?id=" + product.id;
   button.className = "product_card_cta";
   button.textContent = "Shop Now";
   article.appendChild(button);

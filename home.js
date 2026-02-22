@@ -16,7 +16,7 @@ async function refreshPopularList() {
   const productPopularCount = Math.min(3, products.length);
 
   for (let i = 0; i < productPopularCount; i++) {
-    popularList.appendChild(createProductCard(products[i]));
+    popularList.appendChild(createProductCard(products[i], "./"));
   }
 }
 

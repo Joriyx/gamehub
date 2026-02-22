@@ -81,3 +81,17 @@ footer {
   justify-content: space-between;
   color: var(--color-tertiary);
 }
+
+.genre {
+  display: inline-block;
+  padding: 10px;
+}
+
+#genre_list {
+  padding: 10px;
+}
+
+.genre.active {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+}

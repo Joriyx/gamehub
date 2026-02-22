@@ -8,6 +8,7 @@ export function addToCart(product) {
   }
   cart.push(product);
   sessionStorage.setItem("cart", JSON.stringify(cart));
+  refreshCartCounter();
 }
 
 export function removeFromCart(id) {
@@ -15,10 +16,12 @@ export function removeFromCart(id) {
     return product.id != id;
   });
   sessionStorage.setItem("cart", JSON.stringify(cart));
+  refreshCartCounter();
 }
 
 export function clearCart() {
   sessionStorage.removeItem("cart");
+  refreshCartCounter();
 }
 
 export function getCart() {
@@ -28,4 +31,22 @@ export function getCart() {
   }
 
   return JSON.parse(cart);
+}
+
+export function isProductInCart(id) {
+  return getCart().some((product) => {
+    return product.id === id;
+  });
+}
+
+export function itemsInCartCount() {
+  return getCart().length;
+}
+
+export function refreshCartCounter() {
+  const cartCount = document.getElementById("cart_count");
+  if (!cartCount) {
+    return;
+  }
+  cartCount.textContent = getCart().length;
 }

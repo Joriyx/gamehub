@@ -1,5 +1,8 @@
 import { getProducts } from "../api.js";
 import { createProductCard } from "../productCard.js";
+import { refreshCartCounter } from "../cart.js";
+
+refreshCartCounter();
 
 async function refreshPopularList() {
   const popularList = document.getElementById("list");

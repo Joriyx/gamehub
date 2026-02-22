@@ -1,5 +1,7 @@
 import { getProduct } from "../api.js";
-import { addToCart } from "../cart.js";
+import { addToCart, isProductInCart, refreshCartCounter } from "../cart.js";
+
+refreshCartCounter();
 
 function createProductInfo(product) {
   const article = document.getElementById("product");
@@ -39,10 +41,18 @@ function createProductInfo(product) {
   productDetail.appendChild(price);
 
   const button = document.createElement("button");
-  button.textContent = "Add to cart";
-  button.onclick = () => {
-    addToCart(product);
-  };
+  if (isProductInCart(product.id)) {
+    button.textContent = "Already in cart";
+    button.disabled = true;
+  } else {
+    button.textContent = "Add to cart";
+    button.onclick = () => {
+      addToCart(product);
+      button.textContent = "Added to cart";
+      button.disabled = true;
+    };
+  }
+
   productDetail.appendChild(button);
 
   const productImage = document.createElement("section");

@@ -1,2 +1,4 @@
-import { clearCart } from "../../cart.js";
+import { clearCart, refreshCartCounter } from "../../cart.js";
+
 clearCart();
+refreshCartCounter();

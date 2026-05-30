@@ -11,6 +11,10 @@ async function refreshPopularList() {
   }
   popularList.innerHTML = "";
   const products = await getProducts();
+  if ("error" in products) {
+    popularList.innerHTML = products.error;
+    return;
+  }
   if (products.length === 0) {
     popularList.innerHTML = "No products found";
     return;

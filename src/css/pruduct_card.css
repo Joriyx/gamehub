@@ -62,4 +62,5 @@
   gap: 40px;
   justify-content: center;
   margin: 50px 20px;
+  color: var(--color-tertiary);
 }

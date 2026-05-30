@@ -7,7 +7,19 @@ export async function getProducts() {
     if (response.ok) {
       return (await response.json()).data;
     }
-  } catch (error) {}
+    return {
+      error: "Unknown error",
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Unknown error",
+    };
+  }
 }
 
 export async function getProduct(id) {
@@ -16,5 +28,17 @@ export async function getProduct(id) {
     if (response.ok) {
       return (await response.json()).data;
     }
-  } catch (error) {}
+    return {
+      error: "Unknown error",
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        error: error.message,
+      };
+    }
+    return {
+      error: "Unknown error",
+    };
+  }
 }

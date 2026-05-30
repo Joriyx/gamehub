@@ -80,6 +80,12 @@ async function refreshProductInfo() {
     return;
   }
   const product = await getProduct(id);
+  if ("error" in product) {
+    const msg = document.createElement("h1");
+    msg.textContent = product.error;
+    article.appendChild(msg);
+    return;
+  }
   if (!product) {
     const msg = document.createElement("h1");
     msg.textContent = "Product not found";
